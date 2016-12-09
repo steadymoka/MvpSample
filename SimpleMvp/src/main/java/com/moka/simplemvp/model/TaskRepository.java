@@ -4,7 +4,7 @@ package com.moka.simplemvp.model;
 import java.util.HashMap;
 
 
-public class TaskRepository {
+public class TaskRepository implements ITaskRepository {
 
 	private static TaskRepository instance;
 	private HashMap<Long, Task> taskList = new HashMap<>();
@@ -18,6 +18,7 @@ public class TaskRepository {
 		return instance;
 	}
 
+	@Override
 	public Task getTask(long id) {
 //		return taskList.get(id);
 

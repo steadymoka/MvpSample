@@ -1,1 +1,1 @@
-include ':app'
+include ':BaseMvpComponents', ':SimpleMvp'

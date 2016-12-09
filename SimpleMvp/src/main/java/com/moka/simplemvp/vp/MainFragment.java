@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.moka.simplemvp.R;
 
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements IView {
 
 	private MainPresenter presenter;
 
@@ -32,8 +32,9 @@ public class MainFragment extends Fragment {
 		return rootView;
 	}
 
-	public void setTaskTitle(String taskTitle) {
-		textView_taskTitle.setText(taskTitle);
+	@Override
+	public void setTaskTitle(String title) {
+		textView_taskTitle.setText(title);
 	}
 
 }

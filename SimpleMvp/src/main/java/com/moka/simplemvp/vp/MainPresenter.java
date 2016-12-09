@@ -7,15 +7,15 @@ import com.moka.simplemvp.model.TaskRepository;
 
 public class MainPresenter {
 
-	private MainFragment mainFragment;
+	private IView view;
 
-	public void attachView(MainFragment mainFragment) {
-		this.mainFragment = mainFragment;
+	public void attachView(IView view) {
+		this.view = view;
 	}
 
 	public void loadTask() {
 		Task task = TaskRepository.getInstance().getTask(1);
-		mainFragment.setTaskTitle(task.getTitle());
+		view.setTaskTitle(task.getTitle());
 	}
 
 }

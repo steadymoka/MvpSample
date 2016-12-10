@@ -21,10 +21,14 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile rootProject.ext.android_support
+    compile rootProject.ext.supoort_recyclerview
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
+
+    /* Test */
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
     testCompile 'junit:junit:4.12'
 }

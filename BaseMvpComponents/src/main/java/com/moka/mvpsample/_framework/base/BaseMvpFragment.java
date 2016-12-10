@@ -9,6 +9,7 @@ import android.view.View;
 public abstract class BaseMvpFragment<VIEW extends BaseView> extends BaseFragment implements BaseView {
 
 	private BasePresenter<VIEW> presenter;
+	private View rootView;
 
 	@Override
 	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -27,5 +28,16 @@ public abstract class BaseMvpFragment<VIEW extends BaseView> extends BaseFragmen
 	}
 
 	protected abstract BasePresenter<VIEW> getPresenter();
+
+	public void setRootView(View rootView) {
+		this.rootView = rootView;
+	}
+
+	public View findViewById(int resId) {
+		if ( null != rootView )
+			return rootView.findViewById(resId);
+		else
+			return null;
+	}
 
 }
